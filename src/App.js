@@ -1,6 +1,6 @@
 import React  from "react";
 import Counter from "./Counter";
-
+import JobApp from "./JobApp";
 
 class App extends React.Component{
     constructor(props){
@@ -17,9 +17,10 @@ class App extends React.Component{
 
         return(
         <>
-        <h1>Hello App!!</h1>
+        {/* <h1>Hello App!!</h1>
         <button onClick={this.showhide}>Show/Hide :Counter</button>
-        {this.state.show?<Counter by={2}/>:<></>}
+        {this.state.show?<Counter by={2}/>:<></>} */}
+        <JobApp/>
         </>
         )
     }
