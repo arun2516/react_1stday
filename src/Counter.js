@@ -1,40 +1,37 @@
 import React from "react";
 
-class Counter extends React.Component{
+class Counter extends React.PureComponent{
       constructor(props){
           super(props);
           this.state={
               count:0,
+              user:{name:"guvi"},
 
           };
       }
 
       
-increment=()=>this.setState({count:this.state.count+ this.props.by});
+increment=()=>this.setState({count:this.state.count+ 1});
     
 
 decrement=()=>{
         if(this.state.count>0)
-            this.setState({count:this.state.count-this.props.by})};
+            this.setState({count:this.state.count-1})};
 
 reset=()=>this.setState({count:0});
 
-static getDerivedStateFromProps(props,state){
-    return{by:props.by};
-}
-
-shouldComponentUpdate(){
-    return true;
-}
-    
+Changename=()=>this.setState({user:{name:"arun"}});
 
     render(){
+        console.log("rendering!")
         return(
             <>
             <h2>count:{this.state.count}</h2>
+            <h2>name:{this.state.user.name}</h2>
             <button onClick={this.increment}>increment</button>
             <button onClick={this.decrement}>decrement</button>
             <button onClick={this.reset}>reset</button>
+            <button onClick={this.Changename}>Changename</button>
             </>
         )
     }
